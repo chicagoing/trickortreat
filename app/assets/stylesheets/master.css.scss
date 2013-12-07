@@ -84,7 +84,7 @@ a:hover { text-decoration: underline; }
 
 h1 {
   text-align: center;
-  img { width: 100px; }
+  img { width: 120px; }
 }
 .is-home h1 img { width: 203px; }
 h2 { margin-top: 1em; font-size: 1.5em; margin-bottom: .5em; }
@@ -96,6 +96,7 @@ h3, legend {
 h4 {
   color: $dark_grey;
 }
+.donate-form h4 { color: #000; font-weight: 700; }
 p { margin: .4em 0; }
 fieldset {
   margin-bottom: 1.5em;
@@ -121,11 +122,12 @@ input[type="submit"], button[type="submit"] {
 input[type="submit"], input[type="button"], button {
   cursor: pointer;
 }
-input[type="text"], input[type="email"], input[type="number"], input[type="password"], textarea {
+input[type="text"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
   font: 500 16px/1.2 $content_font;
   border-radius: 3px;
   color: $dark_grey;
   border-width: 1px;
+  padding: .2em
 }
 input[type="text"], input[type="email"], input[type="password"], textarea {
   width: 100%;
@@ -133,8 +135,18 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
 input[type="number"] {
   width: 50px;
 }
+.l input[name="exp-month"], .l input[name="exp-year"], .r input[name="cvv"] {
+  width: 60px;
+}
 .r input[name="zip"] {
-  width: 130px;
+  width: 98px;
+}
+label[for="exp-month"] {
+  font-size: .8em;
+  display: block;
+}
+label[for="amount"] {
+  input { width: 50px; }
 }
 ::-webkit-input-placeholder { font-family: $content_font; color: $grey; }
 :-moz-placeholder { font-family: $content_font; color: $grey; }
@@ -148,7 +160,25 @@ form {
   background: #e1e1e1;
   padding: 1em;
 }
-
+.donate-form fieldset { margin-bottom: .6em; }
+.goal {
+  display: none;
+  background: $orange;
+  border-radius: 3px;
+  padding: .8em;
+  position: relative;
+  margin-top: .5em;
+  &:before {
+    content: "";
+    position: absolute;
+    top: -23px;
+    left: 10px;
+    border: 12px solid $orange;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+  }
+}
 .cta {
   font-size: 1.2em;
   background-color: $orange;
@@ -157,6 +187,21 @@ form {
 .btns { text-align: right; }
 .btns input, .btns button {
   margin-left: .5em;
+}
+.btn-amount {
+  color: #fff;
+  min-width: 73px;
+  padding: 10px;
+  margin: 0 .4em .6em 0;
+  background: #c85231;
+  -webkit-transition: background .5s;
+  transition: background .5s;
+  &:hover {
+    background: $dark_orange;
+  }
+  &:focus {
+    background: #76301d;
+  }
 }
 .nav-entry li {
   margin: 2em 0;

@@ -1,6 +1,6 @@
 <h2>Donate</h2>
 
-<form>
+<form class="donate-form">
   <fieldset>
     <legend>Billing information</legend>
     <div class="group">
@@ -77,8 +77,34 @@
 
     <p><input type="text" placeholder="Credit card number"></p>
     <div class="group">
-
+      <p class="l">
+        <input type="text" name="exp-month" placeholder="Month"> / <input type="text" name="exp-year" placeholder="Year">
+        <label for="exp-month">Expiration date</label>
+      </p>
+      <p class="r">
+        <input type="text" name="cvv" placeholder="CVV">
+      </p>
     </div>
-    <p class="btns"><input type="submit" value="Join now!"></p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Amount</legend>
+    {{#each donationAmounts}}
+    <button type="button" class="btn-amount" {{action 'setGoal' this}}>${{amount}}</button>
+    {{/each}}
+
+    <aside class="goal">
+      <h4>Your donation gets&hellip;</h4>
+      {{currentGoal}}
+    </aside>
+
+    <p>
+      <label for="amount">
+        Or enter your own amount:<br>
+        $ <input type="text" name="amount" id="amount">
+      </label>
+    </p>
+
+    <p class="btns"><input type="submit" value="Donate"></p>
   </fieldset>
 </form>
