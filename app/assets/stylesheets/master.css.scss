@@ -80,6 +80,8 @@ a:hover { text-decoration: underline; }
 .wrapper {
   width: 90%;
   margin: 1em auto;
+  background: #fff;
+  position: relative;
 }
 
 h1 {
@@ -87,7 +89,7 @@ h1 {
   img { width: 120px; }
 }
 .is-home h1 img { width: 203px; }
-h2 { margin-top: .5em; font-size: 1.5em; margin-bottom: .5em; }
+h2 { text-align: center; margin-top: .5em; font-size: 1.5em; margin-bottom: .5em; }
 h3, legend {
   font-size: 1.3em;
   color: $orange;
@@ -96,13 +98,60 @@ h3, legend {
 h4 {
   color: $dark_grey;
 }
+
+.main-header {
+  position: relative;
+}
+.nav-primary {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 4em;
+  line-height: .5em;
+  a { color: $dark_grey; text-decoration: none; }
+  &:hover {
+    text-decoration: none;
+    ul {
+      display: block;
+    }
+  }
+  ul {
+    font-size: 16px;
+    line-height: 1;
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: #e1e1e1;
+    padding: 1em;
+    border-radius: 3px;
+    border: 1px solid $grey;
+    width: 150px;
+    li {
+      padding: .2em 0;
+      a { color: $blue;
+        &:hover {
+          text-decoration: underline;;
+        }
+      }
+    }
+  }
+}
+.is-account .nav-primary {
+  display: block;
+}
+
+.nice-msg, .saved-pumpkins { text-align: center; }
+
 .donate-form h4 { color: #000; font-weight: 700; }
 p { margin: .4em 0; }
 fieldset {
   margin-bottom: 1.5em;
   &:last-child { margin-bottom: 0; }
 }
-input[type="submit"], input[type="button"], button, .cta {
+fieldset .intro { margin-bottom: 1em; line-height: 1.3; }
+input[type="submit"], input[type="button"], button, .cta, .submit {
   // Undo default button styles
   border: none;
   margin: 0;
@@ -110,7 +159,7 @@ input[type="submit"], input[type="button"], button, .cta {
   border-radius: 3px;
   font: 600 16px/1.2 $content_font;
 }
-input[type="submit"], button[type="submit"] {
+input[type="submit"], button[type="submit"], .submit {
   color: #fff;
   background: $blue;
   -webkit-transition: background .5s;
@@ -119,9 +168,10 @@ input[type="submit"], button[type="submit"] {
     background: $dark_blue;
   }
 }
-input[type="submit"], input[type="button"], button {
+input[type="submit"], input[type="button"], button, .submit {
   cursor: pointer;
 }
+.submit { margin-top: .5em; display: inline-block; }
 input[type="text"], input[type="email"], input[type="number"], input[type="password"], textarea, select {
   font: 500 16px/1.2 $content_font;
   border-radius: 3px;
@@ -148,6 +198,8 @@ label[for="exp-month"] {
 label[for="amount"] {
   input { width: 50px; }
 }
+.fa { background: none; padding: 0; color: $grey;
+  &:hover { color: $blue; } }
 ::-webkit-input-placeholder { font-family: $content_font; color: $grey; }
 :-moz-placeholder { font-family: $content_font; color: $grey; }
 ::-moz-placeholder { font-family: $content_font; color: $grey;}
@@ -183,11 +235,15 @@ form {
   font-size: 1.2em;
   background-color: $orange;
   color: #fff;
+  display: inline-block;
 }
+.next-house { margin-bottom: 1em; }
+.trick-or-treat { display: inline-block; }
 .btns { text-align: right; }
 .btns input, .btns button {
   margin-left: .5em;
 }
+.btns-centered { text-align: center; }
 .btn-amount {
   color: #fff;
   min-width: 73px;
@@ -206,8 +262,36 @@ form {
 .nav-entry li {
   margin: 2em 0;
 }
+.trick-or-treat-box {
+  text-align: center;
+  img { width: 100px; }
+  img, h2 { float: left; }
+}
+.well-done {
+  text-align: left;
+  img { float: left; margin-right: .2em }
+}
 
+@media screen and (min-width: 430px) {
+  .trick-or-treat { margin-top: 5em; }
+  .jack { float: left; }
+  .trick-or-treat-box {
+    img { width: 150px; }
+  }
+}
+@media screen and (min-width: 650px) {
+  body {
+    background: #ccc;
+  }
+  .wrapper {
+    padding: 1em;
+    border-radius: 10px;
+  }
+  .trick-or-treat-box {
+    h2 { margin-top: 1em; margin-left: 1em; }
+  }
+}
 /* Larger screen (e.g., desktop or laptop) */
 @media screen and (min-width: 1000px) {
-  .wrapper { max-width: 400px; }
+  .wrapper { max-width: 500px; }
 }

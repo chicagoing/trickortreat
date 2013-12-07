@@ -7,17 +7,6 @@ App.Router.map(function() {
   this.resource('donate_thanks', { path: '/donate_thanks'});
   this.resource('statistics', { path: '/statistics'});
   this.resource('statistics_empty', { path: '/statistics_empty'});
-  this.route('catchAll', { path: '*' });
-});
-
-App.Router.reopen({
-  handleURL: function (url) {
-    try {
-      return this._super(url);
-    } catch (error) {
-      return this._super('/');
-    }
-  }
 });
 
 App.ApplicationRoute = Ember.Route.extend({
@@ -27,8 +16,43 @@ App.ApplicationRoute = Ember.Route.extend({
   }
 });
 
-App.IndexRoute = Ember.Route.extend({
+App.StatisticsEmptyRoute = Ember.Route.extend({
   setupController: function(controller) {
-    controller.set('controllers.application.isHome', true);
+    // Set the IndexController's `title`
+    $("body").addClass("is-account");
+  }
+});
+
+App.StatisticsRoute = Ember.Route.extend({
+  setupController: function(controller) {
+    // Set the IndexController's `title`
+    $("body").addClass("is-account");
+  }
+});
+
+App.DonateThanksRoute = Ember.Route.extend({
+  setupController: function(controller) {
+    // Set the IndexController's `title`
+    $("body").addClass("is-account");
+  }
+});
+
+App.DonateThanksAdultRoute = Ember.Route.extend({
+  setupController: function(controller) {
+    // Set the IndexController's `title`
+    $("body").addClass("is-account");
+  }
+});
+
+App.TrickOrTreatRoute = Ember.Route.extend({
+  setupController: function(controller) {
+    // Set the IndexController's `title`
+    $("body").removeClass("is-account");
+  }
+});
+
+App.IndexRoute = Ember.Route.extend({
+  redirect: function() {
+    this.transitionTo('trick-or-treat');
   }
 });

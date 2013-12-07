@@ -1,5 +1,17 @@
 <header class="main-header">
   <h1><img src="assets/unicef-logo.png"></h1>
+  <nav class="nav-primary">
+    <a class="icon-menu" href="#">&#8801;</a>
+
+    <ul>
+      <li>{{#link-to 'donate_request'}}Next house{{/link-to}}</li>
+      <li>{{#link-to 'statistics'}}Team score{{/link-to}}</li>
+      <li><a href="">Account</a></li>
+      <li><a href="">FAQs</a></li>
+      <li><a href="">Tips</a></li>
+      <li><a href="http://www.trickortreatforunicef.org">About UNICEF</a></li>
+    </ul>
+  </nav>
 </header>
 <section class="main-content">
   {{outlet}}

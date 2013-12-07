@@ -1,9 +1,8 @@
-<h1>Help us to save creatures from scary Jack!</h1>
-<h1>Ask for donation for UNICEF and get email. And after that one more creature will be safe!</h1>
-<img src="assets/creatures_in_danger.png">
-<form>
-  <fieldset>
-    <legend>Share the experience to your friends!</legend>
-    <p class="btns"><input type="submit" value="Share"></p>
-  </fieldset>
-</form>
+<h2>Help us save pumpkins from scary Jack!</h2>
+<p>Every donation helps save one more pumpkin and keeps the world’s kids alive and healthy.</p>
+  <p class="btns-centered group">
+    <img class="jack" src="assets/creatures_in_danger.png" width="200">
+    {{#link-to 'donate_request' class="cta trick-or-treat"}}Go Trick-or-Treat!{{/link-to}}
+</p><br>
+
+{{view App.ShareLinksView}}

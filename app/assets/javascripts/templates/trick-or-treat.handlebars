@@ -1,20 +1,26 @@
-<h2>Trick-or-Treat!</h2>
+<div class="group trick-or-treat-box">
+  <img src="assets/box-transparent.png">
+  <h2>Let's go<br>Trick-or-Treat!</h2>
+</div>
 <form>
   <fieldset>
-    <legend>Sign in</legend>
-    <p><input type="email" placeholder="Group ID Number"></p>
-    <p><input type="password" placeholder="Password"></p>
-    <p class="btns"><a href="#">Forgot your password?</a> <input type="submit" value="Sign in"></p>
+    <p><input type="email" placeholder="Group ID Number" value="CrazyPumpkin"></p>
+    <p><input type="password" placeholder="Password" value="123456"></p>
+    <p class="btns">
+      <a href="#">Forgot your password?</a>
+      <!-- <input type="submit" value="Sign in"> -->
+      {{#link-to 'statistics_empty' class="submit"}}Sign in{{/link-to}}
+    </p>
   </fieldset>
 
-  <!-- <fieldset>
+  <fieldset>
     <legend>Don't have an account?</legend>
-    <h4>Join the Kids Helping Kids&reg; Movement!</h4>
-    <p><input type="text" placeholder="Your full name"></p>
+    <h4><a href="http://www.trickortreatforunicef.org" target="_blank">Join the Kids Helping Kids&reg; Movement!</a></h4>
+    <!-- <p><input type="text" placeholder="Your full name"></p>
     <p><input type="email" placeholder="Email address"></p>
     <p><input type="password" placeholder="Password"></p>
     <p><input type="text" placeholder="Team name"></p>
     <p><label>Number of team members <input type="number" size="2"></label></p>
-    <p class="btns"><input type="submit" value="Join now!"></p>
-  </fieldset> -->
+    <p class="btns"><input type="submit" value="Join now!"></p> -->
+  </fieldset>
 </form>
