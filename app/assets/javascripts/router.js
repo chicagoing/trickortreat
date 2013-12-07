@@ -3,6 +3,8 @@ App.Router.map(function() {
   this.resource('trick-or-treat', { path: '/trick-or-treat'});
   this.resource('donate', { path: '/donate'});
   this.resource('donate_request', { path: '/donate_request'});
+  this.resource('donate_thanks_adult', { path: '/donate_thanks_adult'});
+  this.resource('donate_thanks', { path: '/donate_thanks'});
   this.route('catchAll', { path: '*' });
 });
 
