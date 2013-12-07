@@ -14,3 +14,16 @@ App.Router.reopen({
     }
   }
 });
+
+App.ApplicationRoute = Ember.Route.extend({
+  setupController: function(controller) {
+    // Set the IndexController's `title`
+    controller.set('isHome', false);
+  }
+});
+
+App.IndexRoute = Ember.Route.extend({
+  setupController: function(controller) {
+    controller.set('isHome', true);
+  }
+});
