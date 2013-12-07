@@ -24,6 +24,6 @@ App.ApplicationRoute = Ember.Route.extend({
 
 App.IndexRoute = Ember.Route.extend({
   setupController: function(controller) {
-    controller.set('isHome', true);
+    controller.set('controllers.application.isHome', true);
   }
 });

@@ -59,11 +59,12 @@ body {
   color: #000;
   font: 500 100%/1.2 $content_font;
 }
-a { text-decoration: none; }
+a { color: $darker_blue; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 .wrapper {
   width: 90%;
+  max-width: 400px;
   margin: 1em auto;
 }
 
@@ -72,12 +73,64 @@ h1 {
   img { width: 100px; }
 }
 .is-home h1 img { width: 203px; }
+h2 { font-size: 1.5em; margin-bottom: .5em; }
+h3, legend {
+  font-size: 1.3em;
+  color: $orange;
+  margin: .5em 0 .4em;
+}
+h4 {
+  color: $dark_grey;
+}
+p { margin: .4em 0; }
+fieldset { margin-bottom: 1.5em; }
+input[type="submit"], input[type="button"], button, .cta {
+  // Undo default button styles
+  border: none;
+  margin: 0;
+  padding: .6em;
+  border-radius: 3px;
+  font: 600 16px/1.2 $content_font;
+}
+input[type="submit"], button[type="submit"] {
+  color: #fff;
+  background: $blue;
+  -webkit-transition: background .5s;
+  transition: background .5s;
+  &:hover {
+    background: $dark_blue;
+  }
+}
+input[type="submit"], input[type="button"], button {
+  cursor: pointer;
+}
+input[type="text"], input[type="email"], input[type="number"], input[type="password"], textarea {
+  font: 500 16px/1.2 $content_font;
+  border-radius: 3px;
+  color: $dark_grey;
+}
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  width: 100%;
+}
+input[type="number"] {
+  width: 50px;
+}
+::-webkit-input-placeholder { font-family: $content_font; color: $grey; }
+:-moz-placeholder { font-family: $content_font; color: $grey; }
+::-moz-placeholder { font-family: $content_font; color: $grey;}
+:-ms-input-placeholder { font-family: $content_font; color: $grey; }
+label {
+  color: $dark_grey;
+}
 
 .cta {
-  padding: .5em;
-  border-radius: 3px;
+  font-size: 1.2em;
   background-color: $orange;
   color: #fff;
+}
+.btns { text-align: right; }
+.btns input, .btns button {
+  margin-left: .5em;
 }
 .nav-entry li {
   margin: 2em 0;
