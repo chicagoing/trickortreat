@@ -1,0 +1,24 @@
+@import "mixins";
+
+body { color: #000; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrapper {
+  width: 90%;
+  margin: 1em auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.cta {
+  padding: .5em;
+  border-radius: 3px;
+  background-color: $orange;
+  color: #fff;
+}
+.nav-entry li {
+  margin: 2em 0;
+}
