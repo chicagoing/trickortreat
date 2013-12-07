@@ -97,7 +97,10 @@ h4 {
   color: $dark_grey;
 }
 p { margin: .4em 0; }
-fieldset { margin-bottom: 1.5em; }
+fieldset {
+  margin-bottom: 1.5em;
+  &:last-child { margin-bottom: 0; }
+}
 input[type="submit"], input[type="button"], button, .cta {
   // Undo default button styles
   border: none;
@@ -139,6 +142,11 @@ input[type="number"] {
 :-ms-input-placeholder { font-family: $content_font; color: $grey; }
 label {
   color: $dark_grey;
+}
+form {
+  border-radius: 3px;
+  background: #e1e1e1;
+  padding: 1em;
 }
 
 .cta {
