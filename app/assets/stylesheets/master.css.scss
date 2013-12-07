@@ -62,9 +62,23 @@ body {
 a { color: $darker_blue; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.l, .r {
+  width: 50%;
+  input[type="text"], input[type="email"], input[type="number"], input[type="password"], textarea {
+    width: 97%;
+  }
+}
+.l { float: left; }
+.r { float: right; }
+
 .wrapper {
   width: 90%;
-  max-width: 400px;
   margin: 1em auto;
 }
 
@@ -73,7 +87,7 @@ h1 {
   img { width: 100px; }
 }
 .is-home h1 img { width: 203px; }
-h2 { font-size: 1.5em; margin-bottom: .5em; }
+h2 { margin-top: 1em; font-size: 1.5em; margin-bottom: .5em; }
 h3, legend {
   font-size: 1.3em;
   color: $orange;
@@ -108,12 +122,16 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
   font: 500 16px/1.2 $content_font;
   border-radius: 3px;
   color: $dark_grey;
+  border-width: 1px;
 }
 input[type="text"], input[type="email"], input[type="password"], textarea {
   width: 100%;
 }
 input[type="number"] {
   width: 50px;
+}
+.r input[name="zip"] {
+  width: 130px;
 }
 ::-webkit-input-placeholder { font-family: $content_font; color: $grey; }
 :-moz-placeholder { font-family: $content_font; color: $grey; }
@@ -134,4 +152,9 @@ label {
 }
 .nav-entry li {
   margin: 2em 0;
+}
+
+/* Larger screen (e.g., desktop or laptop) */
+@media screen and (min-width: 1000px) {
+  .wrapper { max-width: 400px; }
 }
