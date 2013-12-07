@@ -2,6 +2,7 @@ App.Router.map(function() {
   this.resource('index', { path: '/' });
   this.resource('trick-or-treat', { path: '/trick-or-treat'});
   this.resource('donate', { path: '/donate'});
+  this.resource('donate_request', { path: '/donate_request'});
   this.route('catchAll', { path: '*' });
 });
 
