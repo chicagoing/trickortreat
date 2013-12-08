@@ -237,7 +237,24 @@ form {
   color: #fff;
   display: inline-block;
 }
-.next-house { margin-bottom: 1em; }
+.next-house {
+  margin-bottom: 1em;
+  position: relative;
+  padding: 1em;
+  padding-right: 50px;
+
+  &:after {
+    content: "";
+    background: url(../assets/icons-tot4unicef.png) no-repeat -472px -267px;
+    width: 57px;
+    height: 79px;
+    position: absolute;
+    top: -10px;
+    right: -2px;
+    -webkit-transform: scale(.6);
+    transform: scale(.6);
+  }
+}
 .trick-or-treat { display: inline-block; }
 .btns { text-align: right; }
 .btns input, .btns button {
@@ -270,6 +287,17 @@ form {
 .well-done {
   text-align: left;
   img { float: left; margin-right: .2em }
+}
+.donate-page h1 {
+  text-align: left;
+}
+.donate-page .team-name { display: block; }
+.team-name {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: $dark_grey;
 }
 
 @media screen and (min-width: 430px) {

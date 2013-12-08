@@ -16,6 +16,13 @@ App.ApplicationRoute = Ember.Route.extend({
   }
 });
 
+App.DonateRoute = Ember.Route.extend({
+  setupController: function(controller) {
+    // Set the IndexController's `title`
+    $("body").addClass("donate-page");
+  }
+});
+
 App.StatisticsEmptyRoute = Ember.Route.extend({
   setupController: function(controller) {
     // Set the IndexController's `title`
